@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe" customClass="TabButton">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="spC-sU-8Nv">
+                    <rect key="frame" x="0.0" y="0.0" width="180" height="49"/>
+                    <buttonCell key="cell" type="square" title="Home" bezelStyle="shadowlessSquare" image="NSCaution" imagePosition="left" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="bCb-39-set">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onClickTabBtn:" target="c22-O7-iKe" id="TXw-h3-uXF"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="lwG-Gk-DyT">
+                    <rect key="frame" x="154" y="23" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="8aE-9C-X3L"/>
+                        <constraint firstAttribute="height" constant="20" id="hQG-v7-TfS"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="close_new" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="rKi-Of-YZT">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="closeView:" target="c22-O7-iKe" id="TDw-Qo-3LL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="spC-sU-8Nv" secondAttribute="bottom" id="B9B-B5-uOh"/>
+                <constraint firstAttribute="trailing" secondItem="lwG-Gk-DyT" secondAttribute="trailing" constant="6" id="Ipo-ya-Yi1"/>
+                <constraint firstItem="lwG-Gk-DyT" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="6" id="iMG-KI-ua1"/>
+                <constraint firstItem="spC-sU-8Nv" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="jVF-OR-bsi"/>
+                <constraint firstAttribute="trailing" secondItem="spC-sU-8Nv" secondAttribute="trailing" id="t9P-YU-dU1"/>
+                <constraint firstItem="spC-sU-8Nv" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="u7n-Wx-HL8"/>
+            </constraints>
+            <connections>
+                <outlet property="_imageBtn" destination="spC-sU-8Nv" id="JDn-FO-w8n"/>
+            </connections>
+            <point key="canvasLocation" x="-18" y="56.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSCaution" width="32" height="32"/>
+        <image name="close_new" width="20.5" height="20"/>
+    </resources>
+</document>
