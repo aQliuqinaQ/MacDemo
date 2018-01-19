@@ -9,8 +9,9 @@
 #import <Cocoa/Cocoa.h>
 typedef void (^MainBtnSelected)(void);
 typedef void (^DeviceManagerBtnSelected)(void);
-typedef void (^MainBtnSelected)(void);
+typedef void (^UserManagerBtnSelected) (void);
 @interface FirstViewController : NSViewController
 @property (nonatomic,copy)MainBtnSelected mainBtnSelectedblock;
 @property (nonatomic,copy)DeviceManagerBtnSelected deviceManagerBtnSelectedblock;
+@property (nonatomic,copy)UserManagerBtnSelected userManagerBtnSelectedBlock;
 @end

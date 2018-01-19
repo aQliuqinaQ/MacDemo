@@ -34,6 +34,9 @@
     }
 }
 - (IBAction)showUserManagerController:(id)sender {
+    if(self.userManagerBtnSelectedBlock){
+        self.userManagerBtnSelectedBlock();
+    }
 }
 
 @end
