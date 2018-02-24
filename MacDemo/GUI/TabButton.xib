@@ -47,6 +47,7 @@
                 <constraint firstItem="spC-sU-8Nv" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="u7n-Wx-HL8"/>
             </constraints>
             <connections>
+                <outlet property="_closeBtn" destination="lwG-Gk-DyT" id="27J-N1-eam"/>
                 <outlet property="_imageBtn" destination="spC-sU-8Nv" id="JDn-FO-w8n"/>
             </connections>
             <point key="canvasLocation" x="-18" y="56.5"/>

@@ -92,6 +92,7 @@
     if([itemIdentifier isEqualToString:identifier_home]){
         TabButton * homeBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 120, 48) image:[NSImage imageNamed:@"shockedface2_full"] title:identifier_home tag:itemIdentifier];
         homeBtn.delegate = self;
+        [homeBtn setCloseBtnHide:YES];
         item.view = homeBtn;
         _lastSelectedTabBtn = homeBtn;
     }else if([itemIdentifier isEqualToString:identifier_main]){

@@ -7,7 +7,6 @@
 //
 
 #import "AddDeviceViewController.h"
-#import "Common.h"
 #import "AddDeviceByIPView.h"
 #import "AddDeviceByDDNSView.h"
 @interface AddDeviceViewController (){
@@ -24,11 +23,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _ipView = [[AddDeviceByIPView alloc] initWithFrame:_contentView.frame];
-    _ddnsView = [[AddDeviceByDDNSView alloc] initWithFrame:_contentView.frame];
+    _ipView = [[AddDeviceByIPView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
+    _ddnsView = [[AddDeviceByDDNSView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
     _ddnsView.hidden = YES;
     [_contentView addSubview:_ddnsView];
     [_contentView addSubview:_ipView];
+    //一样的可以用约束框架
+    [_ipView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(_contentView);
+    }];
+    [_ddnsView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(_contentView);
+    }];
 }
 - (IBAction)changeAddMethod:(id)sender {
     NSSegmentedControl *seg = (NSSegmentedControl *)sender;

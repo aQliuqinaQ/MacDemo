@@ -8,18 +8,22 @@
 
 #import "DeviceManagerViewController.h"
 #import "AddDeviceWindow.h"
-#import "Common.h"
 #import "Host.h"
 #import "AddDeviceByIPView.h"
 #import "AddDeviceByDDNSView.h"
-#import "Enumeration.h"
-@interface DeviceManagerViewController ()<NSTableViewDelegate,NSTableViewDataSource>{
+@interface DeviceManagerViewController ()<NSTableViewDelegate,NSTableViewDataSource,NSTextFieldDelegate>{
     
     __weak IBOutlet NSButton *_modifyBtn;
     __weak IBOutlet NSButton *_deleteBtn;
     __weak IBOutlet NSButton *_configBtn;
     __weak IBOutlet NSTableView *_deviceTableView;
+    __weak IBOutlet NSTextField *_searchText;
+    __weak IBOutlet NSButton *_clearBtn;
     NSMutableArray *_devices;
+    NSMutableArray *_allDevices;
+    NSMutableArray *_searchHosts;
+    BOOL _deviceNameSortAscending;
+    BOOL _ipSortAscending;
 }
 @property (nonatomic,strong)AddDeviceWindow *addDeviceWindow;
 @end
@@ -28,7 +32,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _devices = [[Common getInstance] getAllDevice];
+    _allDevices = [[Common getInstance] getAllDevice];
+    _devices = _allDevices;
+    _searchHosts = [[NSMutableArray alloc] init];
+    _searchText.delegate = self;
 }
 -(void)viewWillAppear{
     [super viewWillAppear];
@@ -43,6 +50,7 @@
     _devices = [[Common getInstance] getAllDevice];
     [_deviceTableView reloadData];
 }
+#pragma mark NSTableview
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
     return _devices.count;
 }
@@ -71,6 +79,55 @@
     }else{
         [self setBtnEnable:NO];
     }
+}
+//点击列名排序
+- (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn{
+    if([tableColumn.identifier isEqualToString:@"DeviceNameCell"]){
+        //method 1
+        if(_deviceNameSortAscending){
+            [_devices sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                Host *p1 = (Host *)obj1;
+                Host *p2 = (Host *)obj2;
+                return [p2.strCaption compare:p1.strCaption];
+            }];
+            [tableView setIndicatorImage: [NSImage imageNamed:@"NSDescendingSortIndicator"] inTableColumn: tableColumn];
+        }else{
+            [_devices sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                Host *p1 = (Host *)obj1;
+                Host *p2 = (Host *)obj2;
+                return [p1.strCaption compare:p2.strCaption];
+            }];
+            [tableView setIndicatorImage: [NSImage imageNamed:@"NSAscendingSortIndicator"] inTableColumn: tableColumn];
+        }
+        _deviceNameSortAscending = !_deviceNameSortAscending;
+        
+        //method 2
+//        NSSortDescriptor *des1 = [NSSortDescriptor sortDescriptorWithKey:@"strCaption" ascending:YES];
+//        [_devices sortUsingDescriptors:@[des1]];
+        
+    }else if([tableColumn.identifier isEqualToString:@"IPAddressCell"]){
+        if(_ipSortAscending){
+            [_devices sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                Host *p1 = (Host *)obj1;
+                Host *p2 = (Host *)obj2;
+                return [p2.strIPAddress compare:p1.strIPAddress];
+            }];
+            [tableView setIndicatorImage: [NSImage imageNamed:@"NSDescendingSortIndicator"] inTableColumn: tableColumn];
+        }else{
+            [_devices sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                Host *p1 = (Host *)obj1;
+                Host *p2 = (Host *)obj2;
+                return [p1.strIPAddress compare:p2.strIPAddress];
+            }];
+            [tableView setIndicatorImage: [NSImage imageNamed:@"NSAscendingSortIndicator"] inTableColumn: tableColumn];
+        }
+        _ipSortAscending = !_ipSortAscending;
+    }else if([tableColumn.identifier isEqualToString:@"DomainAddressCell"]){
+    }else if([tableColumn.identifier isEqualToString:@"DomainNameCell"]){
+    }else if([tableColumn.identifier isEqualToString:@"UserNameCell"]){
+    }else if([tableColumn.identifier isEqualToString:@"NetStatusCell"]){
+    }
+    [_deviceTableView reloadData];
 }
 -(void)setBtnEnable:(BOOL)enable{
     _modifyBtn.enabled = enable;
@@ -206,6 +263,35 @@
 }
 - (IBAction)onClickConfigBtn:(id)sender {
 }
-- (IBAction)search:(id)sender {
+
+#pragma mark textFieldDelegate
+-(void)controlTextDidBeginEditing:(NSNotification *)obj{
+    NSLog(@"开始编辑");
+}
+-(void)controlTextDidChange:(NSNotification *)obj{
+    NSLog(@"修改内容");
+    _clearBtn.hidden = NO;
+    if([_searchText.stringValue isEqualToString:@""]){
+        _devices = _allDevices;
+        [_deviceTableView reloadData];
+        return;
+    }
+    [_searchHosts removeAllObjects];
+    for(Host *host in _devices){
+        if([host.strCaption containsString:_searchText.stringValue] || [host.strIPAddress containsString:_searchText.stringValue] || [host.strDomainAddress containsString:_searchText.stringValue] || [host.strDomainName containsString:_searchText.stringValue]){
+            [_searchHosts addObject:host];
+        }
+    }
+    _devices = _searchHosts;
+    [_deviceTableView reloadData];
+}
+-(void)controlTextDidEndEditing:(NSNotification *)obj{
+    NSLog(@"结束编辑");
+}
+- (IBAction)clearSearchText:(id)sender {
+    _searchText.stringValue = @"";
+    _devices = _allDevices;
+    [_deviceTableView reloadData];
+    _clearBtn.hidden = YES;
 }
 @end

@@ -10,6 +10,7 @@
 @interface TabButton (){
     
     __weak IBOutlet NSButton *_imageBtn;
+    __weak IBOutlet NSButton *_closeBtn;
 }
 
 @end
@@ -32,6 +33,9 @@
         self.identifier = identifier;
         self.wantsLayer = YES;
         self.layer.backgroundColor = [NSColor redColor].CGColor;
+        
+        NSTrackingArea *area = [[NSTrackingArea alloc] initWithRect:_closeBtn.bounds options:NSTrackingMouseEnteredAndExited+NSTrackingActiveAlways owner:self userInfo:nil];
+        [_closeBtn addTrackingArea:area];
     }
     return self;
 }
@@ -48,5 +52,16 @@
         [self.delegate selecteTabBtn:self.identifier];
     }
 }
-
+-(void)setCloseBtnHide:(BOOL)hide{
+    _closeBtn.hidden = hide;
+}
+#pragma mark 监听鼠标事件
+-(void)mouseEntered:(NSEvent *)event{
+    NSLog(@"鼠标移入closeBtn");
+    _closeBtn.alphaValue = 1.0;
+}
+-(void)mouseExited:(NSEvent *)event{
+    NSLog(@"鼠标移出closeBtn");
+    _closeBtn.alphaValue = 0.0;
+}
 @end

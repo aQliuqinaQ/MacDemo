@@ -8,10 +8,12 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DeviceManagerViewController">
             <connections>
+                <outlet property="_clearBtn" destination="wa1-tt-omP" id="Tcd-mG-Ipt"/>
                 <outlet property="_configBtn" destination="dY9-Gf-mzz" id="Ceh-Gp-GTj"/>
                 <outlet property="_deleteBtn" destination="Xft-5Z-zHy" id="tg0-bp-hq6"/>
                 <outlet property="_deviceTableView" destination="tbR-rg-9Lt" id="gCz-P2-qrU"/>
                 <outlet property="_modifyBtn" destination="qaP-4Y-A52" id="nqg-Xr-a5d"/>
+                <outlet property="_searchText" destination="D47-dl-tul" id="hWN-EU-ssc"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -311,21 +313,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
-                <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt6-EY-4AC">
-                    <rect key="frame" x="718" y="516" width="213" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="213" id="97U-Ai-6UJ"/>
-                        <constraint firstAttribute="height" constant="22" id="GdU-g0-niU"/>
-                    </constraints>
-                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="LvQ-hg-Bsg">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        <connections>
-                            <action selector="search:" target="-2" id="xrk-HL-ko8"/>
-                        </connections>
-                    </searchFieldCell>
-                </searchField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xBn-FB-PNw">
                     <rect key="frame" x="532" y="508" width="166" height="38"/>
                     <constraints>
@@ -337,22 +324,50 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D47-dl-tul">
+                    <rect key="frame" x="744" y="512" width="186" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="hh0-pM-v2d"/>
+                        <constraint firstAttribute="width" constant="186" id="l3h-aM-pYm"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="left" placeholderString="Search..." drawsBackground="YES" allowsEditingTextAttributes="YES" id="X7J-Yd-HeO">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wa1-tt-omP">
+                    <rect key="frame" x="894" y="519" width="36" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="Ig4-W8-lnI"/>
+                        <constraint firstAttribute="height" constant="17" id="Ra0-HO-Quc"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="close_new" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="6Yj-T0-Q0b">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clearSearchText:" target="-2" id="kzf-ZM-GTL"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="Xft-5Z-zHy" firstAttribute="leading" secondItem="qaP-4Y-A52" secondAttribute="trailing" constant="10" id="0J0-fQ-v5T"/>
                 <constraint firstItem="cpi-Z3-rQ9" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="77" id="5LO-gJ-fhi"/>
                 <constraint firstItem="xBn-FB-PNw" firstAttribute="centerY" secondItem="dY9-Gf-mzz" secondAttribute="centerY" id="716-Oc-Sgp"/>
                 <constraint firstItem="xBn-FB-PNw" firstAttribute="leading" secondItem="dY9-Gf-mzz" secondAttribute="trailing" constant="10" id="7eP-q1-0jp"/>
+                <constraint firstItem="wa1-tt-omP" firstAttribute="trailing" secondItem="D47-dl-tul" secondAttribute="trailing" id="AE1-WX-PQH"/>
                 <constraint firstAttribute="trailing" secondItem="Uak-v4-dhS" secondAttribute="trailing" constant="14" id="Aci-of-Xf2"/>
-                <constraint firstAttribute="trailing" secondItem="Vt6-EY-4AC" secondAttribute="trailing" constant="14" id="Bpx-2n-ok5"/>
                 <constraint firstItem="dY9-Gf-mzz" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="77" id="DIh-UM-QCw"/>
                 <constraint firstItem="Xft-5Z-zHy" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="77" id="DvO-sa-K2Y"/>
                 <constraint firstItem="qaP-4Y-A52" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="77" id="KQg-Ha-JHW"/>
+                <constraint firstItem="wa1-tt-omP" firstAttribute="centerY" secondItem="D47-dl-tul" secondAttribute="centerY" id="MEc-CH-BSp"/>
                 <constraint firstItem="dY9-Gf-mzz" firstAttribute="leading" secondItem="Xft-5Z-zHy" secondAttribute="trailing" constant="10" id="Odd-cj-uTV"/>
                 <constraint firstItem="Uak-v4-dhS" firstAttribute="top" secondItem="cpi-Z3-rQ9" secondAttribute="bottom" constant="9" id="Paq-dH-VO2"/>
+                <constraint firstItem="D47-dl-tul" firstAttribute="centerY" secondItem="xBn-FB-PNw" secondAttribute="centerY" id="PbP-lm-BQA"/>
+                <constraint firstItem="D47-dl-tul" firstAttribute="trailing" secondItem="tbR-rg-9Lt" secondAttribute="trailing" id="Sd2-dF-FgS"/>
                 <constraint firstAttribute="bottom" secondItem="Uak-v4-dhS" secondAttribute="bottom" constant="7" id="WFt-AO-hiT"/>
                 <constraint firstItem="cpi-Z3-rQ9" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="14" id="ji2-zw-UqK"/>
-                <constraint firstItem="Vt6-EY-4AC" firstAttribute="centerY" secondItem="dY9-Gf-mzz" secondAttribute="centerY" id="ka1-2d-G6j"/>
                 <constraint firstItem="qaP-4Y-A52" firstAttribute="leading" secondItem="cpi-Z3-rQ9" secondAttribute="trailing" constant="10" id="tHD-nJ-6Gn"/>
                 <constraint firstItem="Uak-v4-dhS" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="14" id="vGW-3K-Ndx"/>
             </constraints>
@@ -362,6 +377,7 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="add" width="26.5" height="26"/>
+        <image name="close_new" width="20.5" height="20"/>
         <image name="delete" width="17" height="17"/>
         <image name="edit" width="17" height="16.5"/>
     </resources>

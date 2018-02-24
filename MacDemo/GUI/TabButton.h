@@ -11,6 +11,7 @@
 @interface TabButton : NSView
 @property (nonatomic,assign)id<TabBtnDelegate>delegate;
 -(instancetype)initWithFrame:(NSRect)frameRect image:(NSImage *)image title:(NSString *)title tag:(NSString *)identifier;
+-(void)setCloseBtnHide:(BOOL)hide;
 @end
 
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PublicCItem">
+            <connections>
+                <outlet property="imageView" destination="lUa-gf-fOK" id="ala-su-jpE"/>
+                <outlet property="titleLab" destination="hOf-FI-ZPd" id="CWI-XV-tBg"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="246" height="208"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lUa-gf-fOK">
+                    <rect key="frame" x="29" y="57" width="189" height="131"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="131" id="esk-7F-Ctm"/>
+                        <constraint firstAttribute="width" constant="189" id="x7i-9z-keO"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="pQW-Ol-ddX"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hOf-FI-ZPd">
+                    <rect key="frame" x="27" y="9" width="193" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="7gk-Mb-kmy"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="kod-Ka-97D">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="hOf-FI-ZPd" secondAttribute="bottom" constant="9" id="Hj5-RM-nxz"/>
+                <constraint firstAttribute="trailing" secondItem="hOf-FI-ZPd" secondAttribute="trailing" constant="28" id="dRo-ku-MIQ"/>
+                <constraint firstItem="lUa-gf-fOK" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="eAI-pd-Ied"/>
+                <constraint firstItem="lUa-gf-fOK" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="fLo-LU-T1f"/>
+                <constraint firstItem="hOf-FI-ZPd" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="29" id="jay-aj-oTd"/>
+            </constraints>
+            <point key="canvasLocation" x="-237" y="42"/>
+        </customView>
+    </objects>
+</document>
