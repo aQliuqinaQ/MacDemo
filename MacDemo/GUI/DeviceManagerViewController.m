@@ -24,6 +24,7 @@
     NSMutableArray *_searchHosts;
     BOOL _deviceNameSortAscending;
     BOOL _ipSortAscending;
+    NSModalSession _sessionCode;
 }
 @property (nonatomic,strong)AddDeviceWindow *addDeviceWindow;
 @end
@@ -36,10 +37,15 @@
     _devices = _allDevices;
     _searchHosts = [[NSMutableArray alloc] init];
     _searchText.delegate = self;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(windowWillClose:)
+                                                 name:NSWindowWillCloseNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshDeviceTable) name:@"Add Device" object:nil];
 }
 -(void)viewWillAppear{
     [super viewWillAppear];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshDeviceTable) name:@"Add Device" object:nil];
+    
 }
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -143,7 +149,9 @@
 }
 - (IBAction)onClickAddDeviceBtn:(id)sender {
     self.addDeviceWindow = [[AddDeviceWindow alloc] initWithWindowNibName:@"AddDeviceWindow"];
-    [self.addDeviceWindow showWindow:self];
+    [self.addDeviceWindow showWindow:self];//新弹出window，可以同时弹出多个，self也可操作
+    [[NSApplication sharedApplication] runModalForWindow:self.addDeviceWindow.window];//只有模态窗口可操作
+//    _sessionCode = [[NSApplication sharedApplication] beginModalSessionForWindow:self.addDeviceWindow.window];//允许self响应快捷键和系统菜单
     [self.addDeviceWindow.window center];
     [self.addDeviceWindow.window makeKeyWindow];
 }
@@ -293,5 +301,11 @@
     _devices = _allDevices;
     [_deviceTableView reloadData];
     _clearBtn.hidden = YES;
+}
+- (void)windowWillClose:(NSNotification *)notification {
+    [[NSApplication sharedApplication] stopModal];
+//    if (_sessionCode != 0) {
+//        [[NSApplication sharedApplication]endModalSession:_sessionCode];
+//    }
 }
 @end

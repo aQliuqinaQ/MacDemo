@@ -25,7 +25,7 @@
     [self.window.contentView addSubview:self.tabController.view];
     self.tabController.view.frame = NSMakeRect(0, 0, self.window.contentView.frame.size.width, self.window.contentView.frame.size.height-20);
     [self.window setMovableByWindowBackground:YES];
-    
+    [self.window setFrame:[[NSScreen mainScreen]visibleFrame] display:YES];
     NSError *pNSError;
     NSFileManager *pNSFileManager = [NSFileManager defaultManager];
     NSString *pNSStrDocumentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -68,6 +68,9 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
-
-
+//应用关闭后点击Dock菜单重新打开应用
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag{
+    [self.window makeKeyAndOrderFront:self];
+    return YES;
+}
 @end

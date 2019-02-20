@@ -12,10 +12,16 @@
 #import "TabButton.h"
 #import "MasterViewController.h"
 #import "DeviceManagerViewController.h"
-#define identifier_main @"Main"
+#import "TreeTableViewController.h"
+#import "VideoPlayController.h"
+#import "ControlsController.h"
+#define identifier_main @"Public"
 #define identifier_home @"Home"
 #define identifier_device @"Device Manager"
 #define identifier_user   @"User Manager"
+#define identifier_tree   @"Tree Table"
+#define identifier_videoplay   @"VideoPlay"
+#define identifier_controls @"controls"
 @interface TabViewController ()<NSToolbarDelegate,TabBtnDelegate>{
     NSToolbar *_toolBar;
     NSMutableArray *_identifiers;
@@ -69,6 +75,36 @@
         }
         [weakself selecteTabBtn:identifier_user];
     };
+    first.treeTableBtnSelectedBlock = ^(void){
+        if(![_identifiers containsObject:identifier_tree]){
+            TreeTableViewController *tree = [[TreeTableViewController alloc] initWithNibName:@"TreeTableViewController" bundle:nil];
+            NSTabViewItem *item = [NSTabViewItem tabViewItemWithViewController:tree];
+            [weakself insertTabViewItem:item atIndex:self.tabViewItems.count];
+            [_identifiers addObject:identifier_tree];
+            [_toolBar insertItemWithItemIdentifier:identifier_tree atIndex:_toolBar.items.count];
+        }
+        [weakself selecteTabBtn:identifier_tree];
+    };
+    first.videoPlayBtnSelectedBlock = ^(void){
+//        if(![_identifiers containsObject:identifier_tree]){
+            VideoPlayController *videoplay = [[VideoPlayController alloc] initWithNibName:@"VideoPlayController" bundle:nil];
+            NSTabViewItem *item = [NSTabViewItem tabViewItemWithViewController:videoplay];
+            [weakself insertTabViewItem:item atIndex:self.tabViewItems.count];
+        [_identifiers addObject:[NSString stringWithFormat:@"%@%lu",identifier_videoplay,(unsigned long)self.tabViewItems.count]];
+            [_toolBar insertItemWithItemIdentifier:[NSString stringWithFormat:@"%@%lu",identifier_videoplay,(unsigned long)self.tabViewItems.count] atIndex:_toolBar.items.count];
+//        }
+        [weakself selecteTabBtn:[NSString stringWithFormat:@"%@%lu",identifier_videoplay,(unsigned long)self.tabViewItems.count]];
+    };
+    first.controlsBtnSelectedBlock = ^(void){
+        if(![_identifiers containsObject:identifier_controls]){
+            ControlsController *controls = [[ControlsController alloc] initWithNibName:@"ControlsController" bundle:nil];
+            NSTabViewItem *item = [NSTabViewItem tabViewItemWithViewController:controls];
+            [weakself insertTabViewItem:item atIndex:self.tabViewItems.count];
+            [_identifiers addObject:identifier_controls];
+            [_toolBar insertItemWithItemIdentifier:identifier_controls atIndex:_toolBar.items.count];
+        }
+        [weakself selecteTabBtn:identifier_controls];
+    };
 }
 -(void)viewDidAppear{
     [super viewDidAppear];
@@ -96,20 +132,35 @@
         item.view = homeBtn;
         _lastSelectedTabBtn = homeBtn;
     }else if([itemIdentifier isEqualToString:identifier_main]){
-        TabButton * mainBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 150, 48) image:[NSImage imageNamed:@"ladybugThumb"] title:@"Main" tag:itemIdentifier];
+        TabButton * mainBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 150, 48) image:[NSImage imageNamed:@"ladybugThumb"] title:itemIdentifier tag:itemIdentifier];
         mainBtn.delegate = self;
         item.view = mainBtn;
         _lastSelectedTabBtn = mainBtn;
     }else if([itemIdentifier isEqualToString:identifier_device]){
-        TabButton * deviceBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 200, 48) image:[NSImage imageNamed:@"wolfSpiderThumb"] title:identifier_device tag:itemIdentifier];
+        TabButton * deviceBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 200, 48) image:[NSImage imageNamed:@"wolfSpiderThumb"] title:itemIdentifier tag:itemIdentifier];
         deviceBtn.delegate = self;
         item.view = deviceBtn;
         _lastSelectedTabBtn = deviceBtn;
     }else if([itemIdentifier isEqualToString:identifier_user]){
-        TabButton * deviceBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 200, 48) image:[NSImage imageNamed:@"potatoBugThumb"] title:identifier_device tag:itemIdentifier];
+        TabButton * deviceBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 200, 48) image:[NSImage imageNamed:@"potatoBugThumb"] title:itemIdentifier tag:itemIdentifier];
         deviceBtn.delegate = self;
         item.view = deviceBtn;
         _lastSelectedTabBtn = deviceBtn;
+    }else if([itemIdentifier isEqualToString:identifier_tree]){
+        TabButton * treeBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 200, 48) image:[NSImage imageNamed:@"centipedeThumb"] title:itemIdentifier tag:itemIdentifier];
+        treeBtn.delegate = self;
+        item.view = treeBtn;
+        _lastSelectedTabBtn = treeBtn;
+    }else if([itemIdentifier containsString:identifier_videoplay]){
+        TabButton * videoPlayBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 200, 48) image:[NSImage imageNamed:@"centipedeThumb"] title:itemIdentifier tag:itemIdentifier];
+        videoPlayBtn.delegate = self;
+        item.view = videoPlayBtn;
+        _lastSelectedTabBtn = videoPlayBtn;
+    }else if([itemIdentifier containsString:identifier_controls]){
+        TabButton * controlsBtn = [[TabButton alloc] initWithFrame:CGRectMake(0, 0, 200, 48) image:[NSImage imageNamed:@"centipedeThumb"] title:itemIdentifier tag:itemIdentifier];
+        controlsBtn.delegate = self;
+        item.view = controlsBtn;
+        _lastSelectedTabBtn = controlsBtn;
     }
     NSMenuItem *menuItem = [[NSMenuItem alloc] init];
     menuItem.title = itemIdentifier;

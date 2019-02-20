@@ -58,6 +58,7 @@
     if(success == 0){
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Add Device" object:nil];
         [self.view.window orderOut:self];
+        [[NSApplication sharedApplication] stopModal];
     }else if(success == ERR_CAPTION_EXSIT){
         if(_seg.selectedSegment == 0){
             [self showPopOverWithMessage:@"设备名称已存在" toview:_ipView.deviceName];
@@ -91,6 +92,7 @@
 }
 - (IBAction)cancel:(id)sender {
     [self.view.window orderOut:self];
+    [[NSApplication sharedApplication] stopModal];
 }
 
 @end

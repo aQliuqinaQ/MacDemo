@@ -30,7 +30,6 @@
     [super viewWillAppear];
     NSLog(@"show first");
 }
-
 -(void)addTrackArea:(NSView *)view{
      NSTrackingArea *area = [[NSTrackingArea alloc] initWithRect:view.bounds options:NSTrackingActiveAlways+NSTrackingMouseEnteredAndExited owner:self userInfo:nil];
     [view addTrackingArea:area];
@@ -48,6 +47,21 @@
 - (IBAction)showUserManagerController:(id)sender {
     if(self.userManagerBtnSelectedBlock){
         self.userManagerBtnSelectedBlock();
+    }
+}
+- (IBAction)showTreeTable:(id)sender {
+    if(self.treeTableBtnSelectedBlock){
+        self.treeTableBtnSelectedBlock();
+    }
+}
+- (IBAction)showVideoPlayController:(id)sender {
+    if (self.videoPlayBtnSelectedBlock) {
+        self.videoPlayBtnSelectedBlock();
+    }
+}
+- (IBAction)showControlsController:(id)sender {
+    if (self.controlsBtnSelectedBlock) {
+        self.controlsBtnSelectedBlock();
     }
 }
 #pragma mark 监听鼠标事件

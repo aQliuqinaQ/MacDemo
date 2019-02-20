@@ -129,6 +129,36 @@
     [_bugTableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:_bugTableView.selectedRow] withAnimation:NSTableViewAnimationSlideRight];
     [self setDetail:nil];
 }
+- (IBAction)moveUp:(id)sender {
+    int selectedIndex = (int)_bugTableView.selectedRow;
+    BugDoc *bug = [self selectedBugDoc];
+    if(bug == nil){
+        return;
+    }
+    if(selectedIndex >= 1){
+        [self.bugs removeObject:bug];
+        [self.bugs insertObject:bug atIndex:selectedIndex-1];
+        [_bugTableView reloadData];
+        [_bugTableView selectRowIndexes:[NSIndexSet indexSetWithIndex:selectedIndex-1] byExtendingSelection:NO];
+        [_bugTableView scrollRowToVisible:selectedIndex-1];
+        [self setDetail:bug];
+    }
+}
+- (IBAction)moveDown:(id)sender {
+    int selectedIndex = (int)_bugTableView.selectedRow;
+    BugDoc *bug = [self selectedBugDoc];
+    if(bug == nil){
+        return;
+    }
+    if(selectedIndex <= self.bugs.count-2){
+        [self.bugs removeObject:bug];
+        [self.bugs insertObject:bug atIndex:selectedIndex+1];
+        [_bugTableView reloadData];
+        [_bugTableView selectRowIndexes:[NSIndexSet indexSetWithIndex:selectedIndex+1] byExtendingSelection:NO];
+        [_bugTableView scrollRowToVisible:selectedIndex+1];
+        [self setDetail:bug];
+    }
+}
 -(void)starsSelectionChanged:(EDStarRating *)control rating:(float)rating{
     BugDoc *bug = [self selectedBugDoc];
     if(bug){

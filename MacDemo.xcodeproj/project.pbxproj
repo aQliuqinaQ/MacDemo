@@ -13,6 +13,8 @@
 		C80AC799200DFDC8009EA7E0 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80AC797200DFDC8009EA7E0 /* FirstViewController.xib */; };
 		C80AC79D200E0133009EA7E0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80AC79B200E0133009EA7E0 /* MainViewController.m */; };
 		C80AC79E200E0133009EA7E0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80AC79C200E0133009EA7E0 /* MainViewController.xib */; };
+		C837937E221A44D8004FFDB2 /* ControlsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C837937C221A44D8004FFDB2 /* ControlsController.m */; };
+		C837937F221A44D8004FFDB2 /* ControlsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C837937D221A44D8004FFDB2 /* ControlsController.xib */; };
 		C838CB81200D94910046530F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C838CB80200D94910046530F /* AppDelegate.m */; };
 		C838CB83200D94910046530F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C838CB82200D94910046530F /* Assets.xcassets */; };
 		C838CB86200D94910046530F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C838CB84200D94910046530F /* MainMenu.xib */; };
@@ -26,6 +28,10 @@
 		C838CBA6200DCB1C0046530F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C838CBA5200DCB1C0046530F /* QuartzCore.framework */; };
 		C838CBAA200DD3800046530F /* SBPopoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C838CBA8200DD3800046530F /* SBPopoViewController.m */; };
 		C838CBAB200DD3800046530F /* SBPopoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C838CBA9200DD3800046530F /* SBPopoViewController.xib */; };
+		C845E600206DDA7300AD6BA4 /* TreeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C845E5FE206DDA7300AD6BA4 /* TreeTableViewController.m */; };
+		C845E601206DDA7300AD6BA4 /* TreeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C845E5FF206DDA7300AD6BA4 /* TreeTableViewController.xib */; };
+		C845E60C206DEFA400AD6BA4 /* RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C845E60B206DEFA400AD6BA4 /* RootModel.m */; };
+		C845E60F206DEFB700AD6BA4 /* LeafModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C845E60E206DEFB700AD6BA4 /* LeafModel.m */; };
 		C86D372420103809006057AC /* DeviceManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D372220103809006057AC /* DeviceManagerViewController.m */; };
 		C86D372520103809006057AC /* DeviceManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D372320103809006057AC /* DeviceManagerViewController.xib */; };
 		C86D372820105471006057AC /* Host.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D372720105471006057AC /* Host.m */; };
@@ -40,6 +46,9 @@
 		C86D37572010979D006057AC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D37522010979D006057AC /* FMResultSet.m */; };
 		C86D375B20109E44006057AC /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D375A20109E44006057AC /* Common.m */; };
 		C86D37612010AD4F006057AC /* test.db in Resources */ = {isa = PBXBuildFile; fileRef = C86D37602010AD4E006057AC /* test.db */; };
+		C87761D32213EF8900DC1ADB /* VideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = C87761D12213EF8900DC1ADB /* VideoPlayController.m */; };
+		C87761D42213EF8900DC1ADB /* VideoPlayController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87761D22213EF8900DC1ADB /* VideoPlayController.xib */; };
+		C87761D72214091900DC1ADB /* VideoPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C87761D62214091900DC1ADB /* VideoPlayView.m */; };
 		C8ABAC0D201857C800923563 /* PublicCItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ABAC0B201857C800923563 /* PublicCItem.m */; };
 		C8ABAC0E201857C800923563 /* PublicCItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8ABAC0C201857C800923563 /* PublicCItem.xib */; };
 		C8AFE717200EEE29006D2EEF /* TabButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AFE716200EEE29006D2EEF /* TabButton.m */; };
@@ -73,6 +82,8 @@
 		C8D2D13E2017257000FA6857 /* WebServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D2D13D2017257000FA6857 /* WebServiceController.m */; };
 		C8D2D1412017264000FA6857 /* Public.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D2D1402017263F00FA6857 /* Public.m */; };
 		C8D2D1442017294500FA6857 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D2D1432017294400FA6857 /* AFAppDotNetAPIClient.m */; };
+		C8D5B921221663D2006FCE1C /* VideoPlayFullWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D5B91F221663D2006FCE1C /* VideoPlayFullWindow.m */; };
+		C8D5B922221663D2006FCE1C /* VideoPlayFullWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8D5B920221663D2006FCE1C /* VideoPlayFullWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +96,9 @@
 		C80AC79A200E0133009EA7E0 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		C80AC79B200E0133009EA7E0 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		C80AC79C200E0133009EA7E0 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		C837937B221A44D8004FFDB2 /* ControlsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlsController.h; sourceTree = "<group>"; };
+		C837937C221A44D8004FFDB2 /* ControlsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlsController.m; sourceTree = "<group>"; };
+		C837937D221A44D8004FFDB2 /* ControlsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlsController.xib; sourceTree = "<group>"; };
 		C838CB7C200D94910046530F /* MacDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C838CB7F200D94910046530F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C838CB80200D94910046530F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,6 +122,13 @@
 		C838CBA7200DD3800046530F /* SBPopoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBPopoViewController.h; sourceTree = "<group>"; };
 		C838CBA8200DD3800046530F /* SBPopoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBPopoViewController.m; sourceTree = "<group>"; };
 		C838CBA9200DD3800046530F /* SBPopoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBPopoViewController.xib; sourceTree = "<group>"; };
+		C845E5FD206DDA7300AD6BA4 /* TreeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeTableViewController.h; sourceTree = "<group>"; };
+		C845E5FE206DDA7300AD6BA4 /* TreeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeTableViewController.m; sourceTree = "<group>"; };
+		C845E5FF206DDA7300AD6BA4 /* TreeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeTableViewController.xib; sourceTree = "<group>"; };
+		C845E60A206DEFA400AD6BA4 /* RootModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootModel.h; sourceTree = "<group>"; };
+		C845E60B206DEFA400AD6BA4 /* RootModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootModel.m; sourceTree = "<group>"; };
+		C845E60D206DEFB700AD6BA4 /* LeafModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeafModel.h; sourceTree = "<group>"; };
+		C845E60E206DEFB700AD6BA4 /* LeafModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeafModel.m; sourceTree = "<group>"; };
 		C86D372120103809006057AC /* DeviceManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceManagerViewController.h; sourceTree = "<group>"; };
 		C86D372220103809006057AC /* DeviceManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceManagerViewController.m; sourceTree = "<group>"; };
 		C86D372320103809006057AC /* DeviceManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceManagerViewController.xib; sourceTree = "<group>"; };
@@ -133,6 +154,11 @@
 		C86D375920109E44006057AC /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		C86D375A20109E44006057AC /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		C86D37602010AD4E006057AC /* test.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.db; sourceTree = "<group>"; };
+		C87761D02213EF8900DC1ADB /* VideoPlayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayController.h; sourceTree = "<group>"; };
+		C87761D12213EF8900DC1ADB /* VideoPlayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayController.m; sourceTree = "<group>"; };
+		C87761D22213EF8900DC1ADB /* VideoPlayController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayController.xib; sourceTree = "<group>"; };
+		C87761D52214091900DC1ADB /* VideoPlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayView.h; sourceTree = "<group>"; };
+		C87761D62214091900DC1ADB /* VideoPlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayView.m; sourceTree = "<group>"; };
 		C8ABAC0A201857C800923563 /* PublicCItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicCItem.h; sourceTree = "<group>"; };
 		C8ABAC0B201857C800923563 /* PublicCItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicCItem.m; sourceTree = "<group>"; };
 		C8ABAC0C201857C800923563 /* PublicCItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicCItem.xib; sourceTree = "<group>"; };
@@ -204,6 +230,9 @@
 		C8D2D1402017263F00FA6857 /* Public.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Public.m; sourceTree = "<group>"; };
 		C8D2D1422017294400FA6857 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
 		C8D2D1432017294400FA6857 /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
+		C8D5B91E221663D2006FCE1C /* VideoPlayFullWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayFullWindow.h; sourceTree = "<group>"; };
+		C8D5B91F221663D2006FCE1C /* VideoPlayFullWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayFullWindow.m; sourceTree = "<group>"; };
+		C8D5B920221663D2006FCE1C /* VideoPlayFullWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayFullWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +323,20 @@
 				C838CBA7200DD3800046530F /* SBPopoViewController.h */,
 				C838CBA8200DD3800046530F /* SBPopoViewController.m */,
 				C838CBA9200DD3800046530F /* SBPopoViewController.xib */,
+				C845E5FD206DDA7300AD6BA4 /* TreeTableViewController.h */,
+				C845E5FE206DDA7300AD6BA4 /* TreeTableViewController.m */,
+				C845E5FF206DDA7300AD6BA4 /* TreeTableViewController.xib */,
+				C87761D02213EF8900DC1ADB /* VideoPlayController.h */,
+				C87761D12213EF8900DC1ADB /* VideoPlayController.m */,
+				C87761D22213EF8900DC1ADB /* VideoPlayController.xib */,
+				C87761D52214091900DC1ADB /* VideoPlayView.h */,
+				C87761D62214091900DC1ADB /* VideoPlayView.m */,
+				C8D5B91E221663D2006FCE1C /* VideoPlayFullWindow.h */,
+				C8D5B91F221663D2006FCE1C /* VideoPlayFullWindow.m */,
+				C8D5B920221663D2006FCE1C /* VideoPlayFullWindow.xib */,
+				C837937B221A44D8004FFDB2 /* ControlsController.h */,
+				C837937C221A44D8004FFDB2 /* ControlsController.m */,
+				C837937D221A44D8004FFDB2 /* ControlsController.xib */,
 				C838CB84200D94910046530F /* MainMenu.xib */,
 			);
 			path = GUI;
@@ -310,6 +353,10 @@
 				C838CB98200D97200046530F /* BugData.m */,
 				C838CB9A200D9A4A0046530F /* BugDoc.h */,
 				C838CB9B200D9A4A0046530F /* BugDoc.m */,
+				C845E60A206DEFA400AD6BA4 /* RootModel.h */,
+				C845E60B206DEFA400AD6BA4 /* RootModel.m */,
+				C845E60D206DEFB700AD6BA4 /* LeafModel.h */,
+				C845E60E206DEFB700AD6BA4 /* LeafModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -504,6 +551,11 @@
 					C838CB7B200D94910046530F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -533,15 +585,19 @@
 				C838CB83200D94910046530F /* Assets.xcassets in Resources */,
 				C8AFE719200EEE42006D2EEF /* TabButton.xib in Resources */,
 				C8B039182011CC10004CB7B4 /* AddDeviceByDDNSView.xib in Resources */,
+				C845E601206DDA7300AD6BA4 /* TreeTableViewController.xib in Resources */,
 				C80AC799200DFDC8009EA7E0 /* FirstViewController.xib in Resources */,
+				C87761D42213EF8900DC1ADB /* VideoPlayController.xib in Resources */,
 				C86D37612010AD4F006057AC /* test.db in Resources */,
 				C838CB86200D94910046530F /* MainMenu.xib in Resources */,
 				C8ABAC0E201857C800923563 /* PublicCItem.xib in Resources */,
 				C838CB94200D94CF0046530F /* MasterViewController.xib in Resources */,
+				C8D5B922221663D2006FCE1C /* VideoPlayFullWindow.xib in Resources */,
 				C86D372D20106903006057AC /* AddDeviceWindow.xib in Resources */,
 				C80AC794200DFCC9009EA7E0 /* TabViewController.xib in Resources */,
 				C86D373220106924006057AC /* AddDeviceViewController.xib in Resources */,
 				C80AC79E200E0133009EA7E0 /* MainViewController.xib in Resources */,
+				C837937F221A44D8004FFDB2 /* ControlsController.xib in Resources */,
 				C86D372520103809006057AC /* DeviceManagerViewController.xib in Resources */,
 				C8B039132011CA4B004CB7B4 /* AddDeviceByIPView.xib in Resources */,
 				C838CBAB200DD3800046530F /* SBPopoViewController.xib in Resources */,
@@ -562,15 +618,20 @@
 				C8B039352011E103004CB7B4 /* MASViewAttribute.m in Sources */,
 				C8B039372011E103004CB7B4 /* NSArray+MASAdditions.m in Sources */,
 				C8D2D1442017294500FA6857 /* AFAppDotNetAPIClient.m in Sources */,
+				C845E60C206DEFA400AD6BA4 /* RootModel.m in Sources */,
 				C8AFE717200EEE29006D2EEF /* TabButton.m in Sources */,
+				C837937E221A44D8004FFDB2 /* ControlsController.m in Sources */,
 				C86D37552010979D006057AC /* FMDatabasePool.m in Sources */,
 				C838CB99200D97200046530F /* BugData.m in Sources */,
+				C87761D72214091900DC1ADB /* VideoPlayView.m in Sources */,
 				C8D2D13920171BE600FA6857 /* YYKVStorage.m in Sources */,
 				C8B039112011CA1D004CB7B4 /* AddDeviceByIPView.m in Sources */,
 				C8D2D13520171BE600FA6857 /* TDNetworkHelper.m in Sources */,
 				C8D2D1172017184300FA6857 /* AFSecurityPolicy.m in Sources */,
 				C86D372420103809006057AC /* DeviceManagerViewController.m in Sources */,
 				C8D2D13820171BE600FA6857 /* YYDiskCache.m in Sources */,
+				C845E60F206DEFB700AD6BA4 /* LeafModel.m in Sources */,
+				C845E600206DDA7300AD6BA4 /* TreeTableViewController.m in Sources */,
 				C86D37562010979D006057AC /* FMDatabaseQueue.m in Sources */,
 				C8D2D1162017184300FA6857 /* AFNetworkReachabilityManager.m in Sources */,
 				C8B039162011CBFA004CB7B4 /* AddDeviceByDDNSView.m in Sources */,
@@ -599,6 +660,8 @@
 				C8D2D1192017184300FA6857 /* AFURLResponseSerialization.m in Sources */,
 				C8D2D1182017184300FA6857 /* AFURLRequestSerialization.m in Sources */,
 				C86D373120106924006057AC /* AddDeviceViewController.m in Sources */,
+				C8D5B921221663D2006FCE1C /* VideoPlayFullWindow.m in Sources */,
+				C87761D32213EF8900DC1ADB /* VideoPlayController.m in Sources */,
 				C8B039342011E103004CB7B4 /* MASLayoutConstraint.m in Sources */,
 				C8D2D13420171BE600FA6857 /* TDNetworkCache.m in Sources */,
 				C80AC798200DFDC8009EA7E0 /* FirstViewController.m in Sources */,
@@ -736,7 +799,7 @@
 				GCC_PREFIX_HEADER = MacDemo/MacDemo.pch;
 				INFOPLIST_FILE = MacDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.tiandy.MacDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mac.Easy7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -752,7 +815,7 @@
 				GCC_PREFIX_HEADER = MacDemo/MacDemo.pch;
 				INFOPLIST_FILE = MacDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.tiandy.MacDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mac.Easy7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

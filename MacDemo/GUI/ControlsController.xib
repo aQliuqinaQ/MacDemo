@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ControlsController">
+            <connections>
+                <outlet property="_filePathTF" destination="TgR-UH-4WH" id="xPC-tT-R4o"/>
+                <outlet property="imageView" destination="6aX-VQ-LCa" id="Bxu-1u-Px1"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="837" height="643"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pva-eq-ETp">
+                    <rect key="frame" x="123" y="123" width="107" height="30"/>
+                    <buttonCell key="cell" type="push" title="打开文件夹" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0tZ-79-VVm">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="pickerFile:" target="-2" id="nhu-l9-pu2"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BTv-qp-jDK">
+                    <rect key="frame" x="123" y="75" width="94" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="KmV-Ew-Edv"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="保存文件" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ct2-Xh-Gi1">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveFile:" target="-2" id="Nj8-iC-Xq8"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TgR-UH-4WH">
+                    <rect key="frame" x="259" y="131" width="545" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="545" id="ZFR-Ij-nF6"/>
+                        <constraint firstAttribute="height" constant="17" id="nll-l7-ZYa"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="border" title="文件路径" id="YZD-uA-WEA">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6aX-VQ-LCa">
+                    <rect key="frame" x="259" y="69" width="48" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="0qT-9b-G1V"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="potatoBug" id="Bfz-Hh-baA"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="BTv-qp-jDK" firstAttribute="top" secondItem="pva-eq-ETp" secondAttribute="bottom" constant="27" id="9B5-hi-aEz"/>
+                <constraint firstItem="6aX-VQ-LCa" firstAttribute="top" secondItem="TgR-UH-4WH" secondAttribute="bottom" constant="15" id="BWg-jO-tsG"/>
+                <constraint firstItem="pva-eq-ETp" firstAttribute="leading" secondItem="BTv-qp-jDK" secondAttribute="leading" id="JKk-Hc-n6r"/>
+                <constraint firstAttribute="trailing" secondItem="TgR-UH-4WH" secondAttribute="trailing" constant="33" id="Np6-ij-K91"/>
+                <constraint firstItem="pva-eq-ETp" firstAttribute="centerY" secondItem="TgR-UH-4WH" secondAttribute="centerY" id="RrN-bk-nIt"/>
+                <constraint firstItem="TgR-UH-4WH" firstAttribute="leading" secondItem="pva-eq-ETp" secondAttribute="trailing" constant="35" id="ZFr-9w-LbA"/>
+                <constraint firstItem="BTv-qp-jDK" firstAttribute="centerY" secondItem="6aX-VQ-LCa" secondAttribute="centerY" id="b23-lx-RLI"/>
+                <constraint firstAttribute="bottom" secondItem="6aX-VQ-LCa" secondAttribute="bottom" constant="69" id="bNT-94-Lew"/>
+                <constraint firstItem="TgR-UH-4WH" firstAttribute="leading" secondItem="6aX-VQ-LCa" secondAttribute="leading" id="c89-hN-Ane"/>
+                <constraint firstAttribute="bottom" secondItem="BTv-qp-jDK" secondAttribute="bottom" constant="82" id="udC-lI-IUZ"/>
+            </constraints>
+            <point key="canvasLocation" x="134.5" y="122.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="potatoBug" width="76.800003051757812" height="76.800003051757812"/>
+    </resources>
+</document>

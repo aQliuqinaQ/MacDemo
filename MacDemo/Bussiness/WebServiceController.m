@@ -61,7 +61,7 @@ static WebServiceController *instance = nil;
     NSDictionary * param = @{@"index":@(pageNum),@"limit":@(requestNum),@"typeId":typeId};
     NSURLSessionDataTask *task = [TDNetworkHelper GET:[NSString stringWithFormat:@"%@%@",@"http://p2pcloud.myviewcloud.com:7000/",@"wsp2p/rest/public/getShareHostsLimit"] parameters:param needCache:NO success:^(id responseObject) {
         NSDictionary *dataDic = [self jsonToDictionary:responseObject];
-//        NSLog(@"getSharePublicList JSON: %@", dataDic);
+//        NSLog(@"getSharePublicList JSON: %@"  dataDic);
         if (dataDic) {
             if([dataDic[@"ret"] intValue] == 0){
                 NSArray *resultArr = dataDic[@"content"][@"channels"];

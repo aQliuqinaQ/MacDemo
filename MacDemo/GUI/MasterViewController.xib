@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -185,6 +185,34 @@
                         <constraint firstAttribute="height" constant="44" id="Z9Z-9V-Doo"/>
                     </constraints>
                 </customView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IHn-HH-uYM">
+                    <rect key="frame" x="233" y="12" width="67" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Bp5-fB-WNO"/>
+                        <constraint firstAttribute="width" constant="55" id="u3q-qW-juE"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="下移" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I5i-kK-UrZ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="moveDown:" target="-2" id="hdv-7w-Owv"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-dh-HI1">
+                    <rect key="frame" x="166" y="12" width="67" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="CY2-ch-gMY"/>
+                        <constraint firstAttribute="width" constant="55" id="o4a-EF-x1w"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="上移" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="v8b-Y1-fLz">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="moveUp:" target="-2" id="9HP-7j-JHu"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Qir-u5-Alp" secondAttribute="bottom" constant="19" id="0SD-r8-Ijd"/>
@@ -194,12 +222,16 @@
                 <constraint firstAttribute="bottom" secondItem="0Kd-gO-T5C" secondAttribute="bottom" constant="46" id="BTT-vi-tTg"/>
                 <constraint firstAttribute="trailing" secondItem="0Kd-gO-T5C" secondAttribute="trailing" constant="29" id="DwS-Ct-ygw"/>
                 <constraint firstItem="Wcx-4G-ahS" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="105" id="EYP-ZO-Br2"/>
+                <constraint firstItem="Qir-u5-Alp" firstAttribute="leading" secondItem="IHn-HH-uYM" secondAttribute="trailing" constant="20" id="FI6-1d-Gxq"/>
                 <constraint firstItem="c5b-fh-KVX" firstAttribute="leading" secondItem="A6Q-Ii-M9n" secondAttribute="trailing" constant="25" id="K53-X0-Ueh"/>
+                <constraint firstItem="IHn-HH-uYM" firstAttribute="leading" secondItem="dTM-dh-HI1" secondAttribute="trailing" constant="12" id="LEe-yb-ias"/>
                 <constraint firstItem="ySK-WU-iBJ" firstAttribute="leading" secondItem="A6Q-Ii-M9n" secondAttribute="trailing" constant="26" id="Odj-ci-ky9"/>
                 <constraint firstItem="QTm-I8-W6A" firstAttribute="top" secondItem="Wcx-4G-ahS" secondAttribute="bottom" constant="8" id="RmQ-2g-zZ8"/>
+                <constraint firstAttribute="bottom" secondItem="IHn-HH-uYM" secondAttribute="bottom" constant="19" id="ULd-by-fiD"/>
                 <constraint firstItem="QTm-I8-W6A" firstAttribute="leading" secondItem="A6Q-Ii-M9n" secondAttribute="trailing" constant="25" id="W47-cd-xDi"/>
                 <constraint firstItem="0BC-Z9-rDN" firstAttribute="top" secondItem="QTm-I8-W6A" secondAttribute="bottom" constant="8" id="WSF-2W-Muu"/>
                 <constraint firstItem="A6Q-Ii-M9n" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="105" id="XTx-Ul-PKV"/>
+                <constraint firstAttribute="bottom" secondItem="dTM-dh-HI1" secondAttribute="bottom" constant="19" id="Xbq-hW-Owg"/>
                 <constraint firstItem="zgS-Qn-p5s" firstAttribute="leading" secondItem="Qir-u5-Alp" secondAttribute="trailing" constant="13" id="go3-7w-r7G"/>
                 <constraint firstItem="A6Q-Ii-M9n" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="hU2-dM-zsy"/>
                 <constraint firstItem="Wcx-4G-ahS" firstAttribute="leading" secondItem="A6Q-Ii-M9n" secondAttribute="trailing" constant="26" id="m3f-2w-gqx"/>
@@ -216,7 +248,7 @@
                 <constraint firstAttribute="bottom" secondItem="zgS-Qn-p5s" secondAttribute="bottom" constant="19" id="y9E-3X-Pfb"/>
                 <constraint firstItem="xMk-QL-PSH" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="103" id="zw1-PB-hcK"/>
             </constraints>
-            <point key="canvasLocation" x="-136.5" y="-104.5"/>
+            <point key="canvasLocation" x="-660" y="-329"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="Kuv-Oa-FjO"/>
     </objects>
